@@ -1,4 +1,4 @@
-package com.spring.api.endpoints;
+package com.spring.api.endpoint;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
