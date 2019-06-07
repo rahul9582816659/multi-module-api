@@ -49,6 +49,7 @@
 	<modules>
 		<module>jpa</module>
 		<module>web</module>
+		<module>aop</module>
 	</modules>
 
 	<build>
