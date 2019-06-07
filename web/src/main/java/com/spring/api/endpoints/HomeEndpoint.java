@@ -8,6 +8,6 @@ public class HomeEndpoint {
 
     @GetMapping("/")
     public String getHome() {
-        return "Api is up and running!";
+        return "Web Api is up and running!";
     }
 }
