@@ -7,8 +7,12 @@ import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.logging.Logger;
+
 @RestController
 public class HomeEndpoint {
+
+    private static Logger logger = Logger.getLogger(HomeEndpoint.class.getName());
 
 
     /**
@@ -16,12 +20,12 @@ public class HomeEndpoint {
      *  This is will trim the extra space around.
      * @param dataBinder
      */
-    @InitBinder
+    /*@InitBinder
     public void initBinder(WebDataBinder dataBinder){
         System.out.println("initBinder");
         StringTrimmerEditor editor = new StringTrimmerEditor(true);
         dataBinder.registerCustomEditor(String.class, editor);
-    }
+    }*/
 
     @Value("${rahul.email}")
     private String email;
@@ -33,13 +37,13 @@ public class HomeEndpoint {
 
     @GetMapping("/get")
     public String getHomeWithParam(@RequestParam String name) {
-        System.out.println(name);
+        logger.info(name);
         return "Get Mapping , " + name + " Email to " + email + " !";
     }
 
     @PostMapping("/post")
     public String getHomeWithReqBody(@RequestBody Employee employee) {
-        System.out.println(employee);
+        logger.info(String.valueOf(employee));
         return "Post Mapping , " + employee.getName() + " Email to " + email + " !";
     }
 }
