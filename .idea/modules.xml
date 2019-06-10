@@ -6,7 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/api.iml" filepath="$PROJECT_DIR$/api.iml" />
       <module fileurl="file://$PROJECT_DIR$/jpa/jpa.iml" filepath="$PROJECT_DIR$/jpa/jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/security/web-security.iml" filepath="$PROJECT_DIR$/security/web-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/security-web/web (1).iml" filepath="$PROJECT_DIR$/security-web/web (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/security-jwt/web-security.iml" filepath="$PROJECT_DIR$/security-jwt/web-security.iml" />
     </modules>
   </component>
 </project>
