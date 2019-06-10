@@ -50,6 +50,7 @@
 		<module>jpa</module>
 		<module>web</module>
 		<module>aop</module>
+		<module>security</module>
 	</modules>
 
 	<build>
