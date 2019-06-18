@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
 
 @RestController
 public class OneToManyMappingEndpoint {
@@ -41,10 +43,15 @@ public class OneToManyMappingEndpoint {
     }
 
     @GetMapping("/ont-to-many-bidirectional")
-    public Instructor oneToOneBidirectionalMapping() {
-        Instructor instructor = entityManager.find(Instructor.class, 1l);
-        System.out.println(instructor);
-        return instructor;
+    public String oneToOneBidirectionalMapping() {
+        Query query = entityManager.createQuery("FROM Instructor");
+        List<Instructor> instructors = query.getResultList();
+        System.out.println(instructors);
+
+        System.out.println("*********************************");
+
+        System.out.println(instructors.get(0).getCourses());
+        return "check logs";
     }
 
 }
