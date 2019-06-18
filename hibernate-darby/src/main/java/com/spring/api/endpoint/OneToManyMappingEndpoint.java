@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.List;
 
 @RestController
 public class OneToManyMappingEndpoint {
@@ -21,7 +20,7 @@ public class OneToManyMappingEndpoint {
 
     @GetMapping("/one-to-many")
     @Transactional
-    public Instructor oneToManyMapping() {
+    public String oneToManyMapping() {
 
         InstructorDetail instructorDetail = new InstructorDetail("thecrazzyrahul", "coding");
 
@@ -38,12 +37,14 @@ public class OneToManyMappingEndpoint {
 
         entityManager.persist(instructor);
 
-        return entityManager.find(Instructor.class, instructor.getId());
+        return "instructor persisted";
     }
 
     @GetMapping("/ont-to-many-bidirectional")
-    public List<Course> oneToOneBidirectionalMapping() {
-        return entityManager.find(Course.class, 3l).getInstructor().getCourses();
+    public Instructor oneToOneBidirectionalMapping() {
+        Instructor instructor = entityManager.find(Instructor.class, 1l);
+        System.out.println(instructor);
+        return instructor;
     }
 
 }

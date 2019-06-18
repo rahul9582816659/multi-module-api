@@ -22,7 +22,7 @@ public class Instructor {
     private InstructorDetail instructorDetail;
 
     // One To Many Mapping
-    @OneToMany(mappedBy = "instructor", cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "instructor", cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
     private List<Course> courses;
 
     public Instructor() {
@@ -94,7 +94,6 @@ public class Instructor {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", instructorDetail=" + instructorDetail +
-                ", courses=" + courses +
                 '}';
     }
 }
