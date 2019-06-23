@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="security-jwt" />
         <module name="web" />
-        <module name="web (1)" />
-        <module name="web-security" />
         <module name="hibernate-darby" />
+        <module name="hibernate-darby (1)" />
         <module name="aop" />
         <module name="jpa" />
       </profile>
@@ -18,20 +18,20 @@
       <module name="aop" target="1.8" />
       <module name="api" target="1.8" />
       <module name="hibernate-darby" target="1.8" />
+      <module name="hibernate-darby (1)" target="1.8" />
       <module name="jpa" target="1.8" />
+      <module name="security-jwt" target="1.8" />
       <module name="web" target="1.8" />
-      <module name="web (1)" target="1.8" />
-      <module name="web-security" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="aop" options="-parameters" />
       <module name="hibernate-darby" options="-parameters" />
+      <module name="hibernate-darby (1)" options="-parameters" />
       <module name="jpa" options="-parameters" />
+      <module name="security-jwt" options="-parameters" />
       <module name="web" options="-parameters" />
-      <module name="web (1)" options="-parameters" />
-      <module name="web-security" options="-parameters" />
     </option>
   </component>
 </project>

@@ -43,15 +43,21 @@ public class OneToManyMappingEndpoint {
     }
 
     @GetMapping("/ont-to-many-bidirectional")
-    public String oneToOneBidirectionalMapping() {
-        Query query = entityManager.createQuery("FROM Instructor");
+    public Instructor oneToOneBidirectionalMapping() {
+       /* Query query = entityManager.createQuery("FROM Instructor");
         List<Instructor> instructors = query.getResultList();
         System.out.println(instructors);
 
+        System.out.println("*********************************");*/
+
+        Instructor instructor = entityManager.find(Instructor.class,1l);
+        System.out.println(instructor);
+
         System.out.println("*********************************");
 
-        System.out.println(instructors.get(0).getCourses());
-        return "check logs";
+        // System.out.println(instructor.getCourses());
+
+        return instructor;
     }
 
 }

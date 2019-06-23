@@ -1,11 +1,11 @@
 package com.spring.api.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-public class Instructor {
+public class Instructor extends AuditModel{
 
     @Id
     @GeneratedValue
@@ -23,7 +23,7 @@ public class Instructor {
 
     // One To Many Mapping
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "instructor", cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-    private List<Course> courses;
+    private Set<Course> courses;
 
     public Instructor() {
     }
@@ -68,11 +68,11 @@ public class Instructor {
 
     // One To Many Mapping
 
-    public List<Course> getCourses() {
+    public Set<Course> getCourses() {
         return courses;
     }
 
-    public void setCourses(List<Course> courses) {
+    public void setCourses(Set<Course> courses) {
         this.courses = courses;
     }
 
@@ -80,7 +80,7 @@ public class Instructor {
     public void addCourse(Course course) {
 
         if(courses == null) {
-            courses = new ArrayList<>();
+            courses = new HashSet<>();
         }
 
         courses.add(course);
