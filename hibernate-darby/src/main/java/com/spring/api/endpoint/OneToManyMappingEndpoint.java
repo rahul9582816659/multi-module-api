@@ -3,6 +3,8 @@ package com.spring.api.endpoint;
 import com.spring.api.entity.Course;
 import com.spring.api.entity.Instructor;
 import com.spring.api.entity.InstructorDetail;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,6 +45,7 @@ public class OneToManyMappingEndpoint {
     }
 
     @GetMapping("/ont-to-many-bidirectional")
+    @Transactional
     public Instructor oneToOneBidirectionalMapping() {
        /* Query query = entityManager.createQuery("FROM Instructor");
         List<Instructor> instructors = query.getResultList();

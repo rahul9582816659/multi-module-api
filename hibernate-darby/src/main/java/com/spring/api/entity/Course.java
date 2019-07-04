@@ -3,9 +3,10 @@ package com.spring.api.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Course extends AuditModel{
+public class Course implements Serializable {
 
     // Instructor to Course : 1 to Many
 

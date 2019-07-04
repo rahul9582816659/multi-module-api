@@ -1,11 +1,12 @@
 package com.spring.api.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Instructor extends AuditModel{
+public class Instructor implements Serializable {
 
     @Id
     @GeneratedValue
